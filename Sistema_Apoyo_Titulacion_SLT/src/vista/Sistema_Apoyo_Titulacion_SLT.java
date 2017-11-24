@@ -10,7 +10,7 @@ package vista;
  * @author Jhon Nash
  */
 public class Sistema_Apoyo_Titulacion_SLT {
-
+//PRUEBAAAAAAAAAAAAAAAAAAAAA
     /**
      * @param args the command line arguments
      */
