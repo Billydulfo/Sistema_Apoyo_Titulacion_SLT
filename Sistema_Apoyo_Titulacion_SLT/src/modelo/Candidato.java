@@ -1,19 +1,36 @@
 package modelo;
-
 public class Candidato extends Persona{
     private int     foto;
-    private String  matriculaParteUno;
-    private String  matriculaParteDos;
-    private Generacion  generacion;
+    private String  matricula;
+    private String generacion;
     private Carrera carrera;
     private String  creditos;
-    private String  trabajo;
     private Tesis   tesis;
     private Horario horario;
     private boolean cartaCompromiso;
     private boolean cartaExp;
     private String  nombreEntidad;
-
+    public Candidato(String nombre,String apellidoPaterno,
+            String apellidoMaterno,String correoElectronico,int telefono,
+            int foto, String matricula, String generacion, 
+            Carrera carrera, String creditos, Tesis tesis,
+            Horario horario, boolean cartaCompromiso,
+            boolean cartaExp, String nombreEntidad) {
+        super(nombre,apellidoPaterno,apellidoMaterno,correoElectronico,telefono);
+        this.foto = foto;
+        this.matricula = matricula;
+        this.generacion = generacion;
+        this.carrera = carrera;
+        this.creditos = creditos;
+        this.tesis = tesis;
+        this.horario = horario;
+        this.cartaCompromiso = cartaCompromiso;
+        this.cartaExp = cartaExp;
+        this.nombreEntidad = nombreEntidad;
+    }
+    public void    setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
     public boolean isCartaCompromiso() {
         return cartaCompromiso;
     }
@@ -35,13 +52,7 @@ public class Candidato extends Persona{
     public void    setFoto(int foto) {
         this.foto = foto;
     }
-    public void    setMatriculaParteUno(String matriculaParteUno) {
-        this.matriculaParteUno = matriculaParteUno;
-    }
-    public void    setMatriculaParteDos(String matriculaParteDos) {
-        this.matriculaParteDos = matriculaParteDos;
-    }
-    public void    setGeneracion(Generacion generacion) {
+    public void    setGeneracion(String generacion) {
         this.generacion = generacion;
     }
     public void    setCarrera(Carrera carrera) {
@@ -50,22 +61,16 @@ public class Candidato extends Persona{
     public void    setCreditos(String creditos) {
         this.creditos = creditos;
     }
-    public void    setTrabajo(String trabajo) {
-        this.trabajo = trabajo;
-    }
     public void    setTesis(Tesis tesis) {
         this.tesis = tesis;
+    }
+    public String  getMatricula() {
+        return matricula;
     }
     public int     getFoto() {
         return foto;
     }
-    public String  getMatriculaParteUno() {
-        return matriculaParteUno;
-    }
-    public String  getMatriculaParteDos() {
-        return matriculaParteDos;
-    }
-    public Generacion getGeneracion() {
+    public String  getGeneracion() {
         return generacion;
     }
     public Carrera getCarrera() {
@@ -73,9 +78,6 @@ public class Candidato extends Persona{
     }
     public String  getCreditos() {
         return creditos;
-    }
-    public String  getTrabajo() {
-        return trabajo;
     }
     public Tesis   getTesis() {
         return tesis;
@@ -87,3 +89,4 @@ public class Candidato extends Persona{
         return nombreEntidad;
     }
 }
+
