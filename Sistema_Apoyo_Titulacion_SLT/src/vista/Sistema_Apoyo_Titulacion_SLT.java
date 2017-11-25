@@ -10,12 +10,14 @@ package vista;
  * @author Jhon Nash
  */
 public class Sistema_Apoyo_Titulacion_SLT {
-//PRUEBAAAAAAAAAAAAAAAAAAAAA
+    static JFramePrincipal jFramePrincipal;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        jFramePrincipal= new JFramePrincipal();
+       jFramePrincipal.setVisible(true);
     }
     
 }

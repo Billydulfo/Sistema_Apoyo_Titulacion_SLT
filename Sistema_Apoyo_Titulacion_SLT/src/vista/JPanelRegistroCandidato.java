@@ -69,94 +69,59 @@ public class JPanelRegistroCandidato extends javax.swing.JPanel {
         jbttnCancelar = new javax.swing.JButton();
         jbttnGuardar = new javax.swing.JButton();
 
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanelDatosPersonales.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Personales"));
         jPanelDatosPersonales.setFont(new java.awt.Font("Segoe UI Symbol", 1, 11)); // NOI18N
+        jPanelDatosPersonales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlabNombre.setText("Nombre de Candidato");
+        jlabNombre.setText("Nombre ");
+        jPanelDatosPersonales.add(jlabNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 30, -1, -1));
 
         jLabApPaterno.setText("Apellido Paterno");
+        jPanelDatosPersonales.add(jLabApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 56, -1, -1));
 
         jLabApMaterno.setText("Apellido Materno");
+        jPanelDatosPersonales.add(jLabApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 82, -1, -1));
 
-        jLabCorrElectronico.setText("Correo Electronico");
+        jLabCorrElectronico.setText("Email");
+        jPanelDatosPersonales.add(jLabCorrElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 108, -1, -1));
 
         jLabTelCelular.setText("Telefono Celular");
+        jPanelDatosPersonales.add(jLabTelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 134, -1, -1));
 
         jtxtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtNombreActionPerformed(evt);
             }
         });
+        jPanelDatosPersonales.add(jtxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 27, 96, -1));
+        jPanelDatosPersonales.add(jtxtApellidoPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 53, 96, -1));
+        jPanelDatosPersonales.add(jtxtApellidoMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 79, 96, -1));
+        jPanelDatosPersonales.add(jtxtCorrElectronico, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 105, 98, -1));
+        jPanelDatosPersonales.add(jtxtNumTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 131, 96, -1));
 
-        javax.swing.GroupLayout jPanelDatosPersonalesLayout = new javax.swing.GroupLayout(jPanelDatosPersonales);
-        jPanelDatosPersonales.setLayout(jPanelDatosPersonalesLayout);
-        jPanelDatosPersonalesLayout.setHorizontalGroup(
-            jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDatosPersonalesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelDatosPersonalesLayout.createSequentialGroup()
-                        .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlabNombre)
-                            .addComponent(jLabApPaterno)
-                            .addComponent(jLabApMaterno))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanelDatosPersonalesLayout.createSequentialGroup()
-                        .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabCorrElectronico)
-                            .addComponent(jLabTelCelular))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtNumTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtCorrElectronico))))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanelDatosPersonalesLayout.setVerticalGroup(
-            jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDatosPersonalesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlabNombre)
-                    .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabApPaterno)
-                    .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabApMaterno)
-                    .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabCorrElectronico)
-                    .addComponent(jtxtCorrElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDatosPersonalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabTelCelular)
-                    .addComponent(jtxtNumTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-
-        add(jPanelDatosPersonales);
-        jPanelDatosPersonales.setBounds(0, 0, 250, 170);
+        add(jPanelDatosPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 160));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Academicos"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabMatricula.setText("Matricula");
+        jPanel1.add(jLabMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 30, -1, -1));
 
         jLabCarrera.setText("Carrera");
+        jPanel1.add(jLabCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 88, -1, -1));
 
         jLabGeneracion.setText("Generacion");
+        jPanel1.add(jLabGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 55, -1, -1));
 
         jLabNomTesis.setText("Nombre de Tesis");
+        jPanel1.add(jLabNomTesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 116, -1, -1));
 
         jLabDircTesis.setText("Director de Tesis");
+        jPanel1.add(jLabDircTesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 145, -1, -1));
+        jPanel1.add(jtxtMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 27, 96, -1));
+        jPanel1.add(jtxtGeneracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 52, 96, -1));
 
         jComBoxCarrera.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jComBoxCarrera.addActionListener(new java.awt.event.ActionListener() {
@@ -164,65 +129,17 @@ public class JPanelRegistroCandidato extends javax.swing.JPanel {
                 jComBoxCarreraActionPerformed(evt);
             }
         });
+        jPanel1.add(jComBoxCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 83, 96, -1));
+        jPanel1.add(jtxtNomTesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 113, 96, -1));
+        jPanel1.add(jtxtDircTesis, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 142, 96, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabMatricula)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtxtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabGeneracion)
-                            .addComponent(jLabCarrera)
-                            .addComponent(jLabNomTesis)
-                            .addComponent(jLabDircTesis))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtDircTesis, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jComBoxCarrera, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtxtGeneracion)
-                                .addComponent(jtxtNomTesis, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(25, 25, 25))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabMatricula)
-                    .addComponent(jtxtMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(5, 5, 5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabGeneracion)
-                    .addComponent(jtxtGeneracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComBoxCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabCarrera))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxtNomTesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabNomTesis))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabDircTesis)
-                    .addComponent(jtxtDircTesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
-        );
-
-        add(jPanel1);
-        jPanel1.setBounds(0, 170, 250, 190);
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Laborales"));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabTrabajo.setText("Trabajas?");
+        jPanel2.add(jLabTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 19, -1, -1));
 
         jRadBtSi.setText("Si");
         jRadBtSi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -231,6 +148,7 @@ public class JPanelRegistroCandidato extends javax.swing.JPanel {
                 jRadBtSiActionPerformed(evt);
             }
         });
+        jPanel2.add(jRadBtSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 16, -1, -1));
 
         jRadBtnNo.setText("No");
         jRadBtnNo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -239,57 +157,22 @@ public class JPanelRegistroCandidato extends javax.swing.JPanel {
                 jRadBtnNoActionPerformed(evt);
             }
         });
+        jPanel2.add(jRadBtnNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 16, -1, -1));
 
         jLabLugar1.setText("Entidad");
+        jPanel2.add(jLabLugar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 46, -1, -1));
+        jPanel2.add(jtxtEntidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 43, 74, -1));
 
         jLabHora.setText("Horarios");
+        jPanel2.add(jLabHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 69, -1, -1));
 
         jbttnHorarioCandidato.setText("Crear");
+        jPanel2.add(jbttnHorarioCandidato, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 69, 74, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabTrabajo)
-                    .addComponent(jLabLugar1)
-                    .addComponent(jLabHora))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jRadBtSi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadBtnNo))
-                    .addComponent(jtxtEntidad)
-                    .addComponent(jbttnHorarioCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabTrabajo)
-                    .addComponent(jRadBtSi)
-                    .addComponent(jRadBtnNo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabLugar1)
-                    .addComponent(jtxtEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabHora)
-                    .addComponent(jbttnHorarioCandidato))
-                .addGap(0, 31, Short.MAX_VALUE))
-        );
-
-        add(jPanel2);
-        jPanel2.setBounds(0, 360, 250, 130);
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         jLabLugar.setText("Lugar");
-        add(jLabLugar);
-        jLabLugar.setBounds(0, 0, 27, 14);
+        add(jLabLugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanelFotoCandidato.setBorder(javax.swing.BorderFactory.createTitledBorder("Foto"));
 
@@ -306,75 +189,38 @@ public class JPanelRegistroCandidato extends javax.swing.JPanel {
             .addComponent(jButtonAddFotoCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
         );
 
-        add(jPanelFotoCandidato);
-        jPanelFotoCandidato.setBounds(300, 0, 170, 170);
+        add(jPanelFotoCandidato, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
 
         jPanelDocumentacion.setBorder(javax.swing.BorderFactory.createTitledBorder("Documentacion"));
+        jPanelDocumentacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbttnCartaCompromiso.setText("Carta Compromiso");
+        jPanelDocumentacion.add(jbttnCartaCompromiso, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 61));
 
         jbttnCartaExposicionMotivos.setText("Carta Exposicion");
+        jbttnCartaExposicionMotivos.setMaximumSize(new java.awt.Dimension(121, 23));
+        jbttnCartaExposicionMotivos.setMinimumSize(new java.awt.Dimension(121, 23));
+        jbttnCartaExposicionMotivos.setPreferredSize(new java.awt.Dimension(121, 23));
+        jPanelDocumentacion.add(jbttnCartaExposicionMotivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 27, 140, 61));
 
-        javax.swing.GroupLayout jPanelDocumentacionLayout = new javax.swing.GroupLayout(jPanelDocumentacion);
-        jPanelDocumentacion.setLayout(jPanelDocumentacionLayout);
-        jPanelDocumentacionLayout.setHorizontalGroup(
-            jPanelDocumentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDocumentacionLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanelDocumentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbttnCartaExposicionMotivos, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbttnCartaCompromiso))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        jPanelDocumentacionLayout.setVerticalGroup(
-            jPanelDocumentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDocumentacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jbttnCartaCompromiso, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jbttnCartaExposicionMotivos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
-        add(jPanelDocumentacion);
-        jPanelDocumentacion.setBounds(260, 180, 210, 180);
+        add(jPanelDocumentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 210, 160));
 
         jPanelCondicionesUso.setBorder(javax.swing.BorderFactory.createTitledBorder("Acetpto terminos y condiciones de uso"));
+        jPanelCondicionesUso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jRdBttnCondicionesSi.setText("si");
+        jPanelCondicionesUso.add(jRdBttnCondicionesSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 16, -1, -1));
 
         jRdBttnCondicionesNo.setText("no");
+        jPanelCondicionesUso.add(jRdBttnCondicionesNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 16, -1, -1));
 
-        javax.swing.GroupLayout jPanelCondicionesUsoLayout = new javax.swing.GroupLayout(jPanelCondicionesUso);
-        jPanelCondicionesUso.setLayout(jPanelCondicionesUsoLayout);
-        jPanelCondicionesUsoLayout.setHorizontalGroup(
-            jPanelCondicionesUsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCondicionesUsoLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jRdBttnCondicionesSi)
-                .addGap(40, 40, 40)
-                .addComponent(jRdBttnCondicionesNo)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-        jPanelCondicionesUsoLayout.setVerticalGroup(
-            jPanelCondicionesUsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelCondicionesUsoLayout.createSequentialGroup()
-                .addGroup(jPanelCondicionesUsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRdBttnCondicionesSi)
-                    .addComponent(jRdBttnCondicionesNo))
-                .addGap(0, 4, Short.MAX_VALUE))
-        );
-
-        add(jPanelCondicionesUso);
-        jPanelCondicionesUso.setBounds(260, 370, 210, 50);
+        add(jPanelCondicionesUso, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 240, 50));
 
         jbttnCancelar.setText("Cancelar");
-        add(jbttnCancelar);
-        jbttnCancelar.setBounds(270, 450, 80, 23);
+        add(jbttnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 80, -1));
 
         jbttnGuardar.setText("Guardar");
-        add(jbttnGuardar);
-        jbttnGuardar.setBounds(390, 450, 71, 23);
+        add(jbttnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNombreActionPerformed
