@@ -1,24 +1,29 @@
 package modelo;
-
-public class Carrera {
-    private String nombre;
-    private String colegio;
-    public String getNombre() {
-        return nombre;
+import java.util.Date;
+public class Horario {
+    private String dia;
+    private Date horaInicio;
+    private Date horaFin;
+    public String getDia() {
+        return dia;
     }
-    public String getColegio() {
-        return colegio;
+    public Date getHoraInicio() {
+        return horaInicio;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Date getHoraFin() {
+        return horaFin;
     }
-    public void setColegio(String colegio) {
-        this.colegio = colegio;
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+    public void setHoraInicio(Date horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+    public void setHoraFin(Date horaFin) {
+        this.horaFin = horaFin;
     }
     @Override
     public String toString() {
-        return "Carrera{"+"nombre="+nombre+"colegio="+colegio+'}';
+        return "Horario{" + "dia=" + dia + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + '}';
     }
-    
-    
 }
