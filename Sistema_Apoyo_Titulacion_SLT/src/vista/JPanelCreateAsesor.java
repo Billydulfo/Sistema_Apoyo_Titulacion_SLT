@@ -82,7 +82,7 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
 
         jbttnCrearAsesorias.setText("Crear");
 
-        jbttnAdministrarSeminario.setText("Administrar Seminario");
+        jbttnAdministrarSeminario.setText("Administrar ");
         jbttnAdministrarSeminario.setEnabled(false);
 
         jbttnEditarAsesor.setText("Editar");
@@ -156,8 +156,8 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbttnCrearAsesorias, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbttnAdministrarSeminario)
-                        .addContainerGap())
+                        .addComponent(jbttnAdministrarSeminario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
                     .addComponent(jSeparator4)
                     .addComponent(jSeparator5)
                     .addGroup(layout.createSequentialGroup()

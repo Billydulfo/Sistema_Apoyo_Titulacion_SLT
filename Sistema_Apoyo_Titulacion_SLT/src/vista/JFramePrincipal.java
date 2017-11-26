@@ -5,17 +5,31 @@
  */
 package vista;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author Jhon Nash
  */
 public class JFramePrincipal extends javax.swing.JFrame {
-
+    JPanelCreateCandidato pc; 
+    JPanelCreateAsesor pa;
+    JPanelFuncionAdministrador pf;
+    JPanelLoginCandidato jpc;
+    
+    
+    
+    
+    
     /**
      * Creates new form JFramePrincipal
      */
     public JFramePrincipal() {
         initComponents();
+        pc = new JPanelCreateCandidato();
+        pa = new JPanelCreateAsesor();
+        pf = new JPanelFuncionAdministrador();
+        jpc = new  JPanelLoginCandidato();
     }
 
     /**
@@ -33,16 +47,32 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jbttnAdministrador = new javax.swing.JButton();
         jPanelAyuda = new javax.swing.JPanel();
         jbttnAyuda = new javax.swing.JButton();
+        jPanelForm = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelUsuarios.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuarios"));
 
         jbttnAcademico.setText("Academico");
+        jbttnAcademico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbttnAcademicoActionPerformed(evt);
+            }
+        });
 
         jbttnEstudiante.setText("Estudiante");
+        jbttnEstudiante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbttnEstudianteActionPerformed(evt);
+            }
+        });
 
         jbttnAdministrador.setText("Administrador");
+        jbttnAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbttnAdministradorActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelUsuariosLayout = new javax.swing.GroupLayout(jPanelUsuarios);
         jPanelUsuarios.setLayout(jPanelUsuariosLayout);
@@ -65,7 +95,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 .addComponent(jbttnEstudiante)
                 .addGap(40, 40, 40)
                 .addComponent(jbttnAdministrador)
-                .addContainerGap(259, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
 
         jPanelAyuda.setBorder(javax.swing.BorderFactory.createTitledBorder("Sistema de Apoyo a la Titilacion"));
@@ -89,28 +119,75 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        jPanelForm.setPreferredSize(new java.awt.Dimension(430, 580));
+
+        javax.swing.GroupLayout jPanelFormLayout = new javax.swing.GroupLayout(jPanelForm);
+        jPanelForm.setLayout(jPanelFormLayout);
+        jPanelFormLayout.setHorizontalGroup(
+            jPanelFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 563, Short.MAX_VALUE)
+        );
+        jPanelFormLayout.setVerticalGroup(
+            jPanelFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanelAyuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(482, 482, 482))))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanelAyuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbttnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnEstudianteActionPerformed
+         pc.setVisible(true);
+         pc.setSize(426,578);
+       
+         
+         
+          jPanelForm.removeAll();
+          jPanelForm.add(pc,BorderLayout.CENTER);
+          jPanelForm.revalidate();
+          jPanelForm.repaint();
+    }//GEN-LAST:event_jbttnEstudianteActionPerformed
+
+    private void jbttnAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnAdministradorActionPerformed
+        pf.setVisible(true);
+        pf.setSize(381,413);
+        
+        
+        jPanelForm.removeAll();
+        jPanelForm.add(pf,BorderLayout.CENTER);
+        jPanelForm.revalidate();
+        jPanelForm.repaint();
+       
+    }//GEN-LAST:event_jbttnAdministradorActionPerformed
+
+    private void jbttnAcademicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnAcademicoActionPerformed
+        pa.setVisible(true);
+        pa.setSize(400,438);
+      
+        jPanelForm.removeAll();
+        jPanelForm.add(pa,BorderLayout.CENTER);
+        jPanelForm.revalidate();
+        jPanelForm.repaint();
+    }//GEN-LAST:event_jbttnAcademicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,6 +196,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanelAyuda;
+    private javax.swing.JPanel jPanelForm;
     private javax.swing.JPanel jPanelUsuarios;
     private javax.swing.JButton jbttnAcademico;
     private javax.swing.JButton jbttnAdministrador;
