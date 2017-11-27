@@ -1,5 +1,9 @@
 package controlador;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
 //Ajustar los datos de acuerdo a la base de datos local
 public class GuardarBDAsesor{
 
