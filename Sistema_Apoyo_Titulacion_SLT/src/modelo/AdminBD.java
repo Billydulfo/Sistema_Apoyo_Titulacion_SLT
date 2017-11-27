@@ -105,7 +105,7 @@ public class AdminBD {
 		if(conexion != null){
 			try{
 		       		proposicion = conexion.createStatement();//sirve para conectarse sabe ir a la base de datos y ejecuta lo que le pidamos 
-			   	valores= "'a','b','c','d','e','satt','sad','snc','f','sat','sin asignar','sac'"; 
+			   	valores= "'"+nombre+"','aez','cuc','hulk','free','ta','sa','gr','ter','tw','sin asignar','sac'"; 
 		       		ordenSQL="INSERT INTO candidatos VALUES("+valores+") ";
 		       		System.out.println(ordenSQL);
 	           		proposicion.executeUpdate(ordenSQL);//para modificar la base de datos por eso no se necesita un result set

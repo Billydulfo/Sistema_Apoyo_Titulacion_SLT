@@ -5,16 +5,20 @@
  */
 package vista;
 
+import controlador.ControladorGuardaAsesor;
+
 /**
  *
  * @author Jhon Nash
  */
 public class JPanelCreateAsesor extends javax.swing.JPanel {
+    ControladorGuardaAsesor cga;
 
     /**
      * Creates new form JPanelCreateAsesor
      */
     public JPanelCreateAsesor() {
+        cga = new ControladorGuardaAsesor(this);
         initComponents();
     }
 
@@ -72,12 +76,6 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
 
         jLabCubiculo.setText("Cubiculo");
 
-        jtxtCubiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtCubiculoActionPerformed(evt);
-            }
-        });
-
         jLabHrAsesor.setText("Horario de asesorias");
 
         jbttnCrearAsesorias.setText("Crear");
@@ -98,6 +96,7 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
         jbttnCancelar.setText("Cancelar");
 
         jbttnGuardar.setText("Guardar");
+        jbttnGuardar.addActionListener(cga);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -235,10 +234,6 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                 .addContainerGap(43, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jtxtCubiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtCubiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtCubiculoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

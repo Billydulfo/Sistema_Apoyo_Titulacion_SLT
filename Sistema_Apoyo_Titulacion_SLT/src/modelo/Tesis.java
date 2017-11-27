@@ -1,17 +1,23 @@
 package modelo;
 public class Tesis {
     private String Tema;
-    private Asesor director;
+    private String director;
+
+    public Tesis() {
+        this.Tema = null;
+        this.director = null;
+    }
+    
     public String getTema() {
         return Tema;
     }
     public void setTema(String Tema) {
         this.Tema = Tema;
     }
-    public Asesor getDirector() {
+    public String getDirector() {
         return director;
     }
-    public void setDirector(Asesor director) {
+    public void setDirector(String director) {
         this.director = director;
     }
     @Override

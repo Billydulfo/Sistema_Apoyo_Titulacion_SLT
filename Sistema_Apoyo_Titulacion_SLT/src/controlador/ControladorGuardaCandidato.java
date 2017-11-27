@@ -28,15 +28,18 @@ public class ControladorGuardaCandidato implements ActionListener{
     private AdminBD adminBD;
     private JPanelCreateCandidato jPanelCreateCandidato;
 
-    public ControladorGuardaCandidato(JPanelCreateCandidato jPanelCreateCandidato) {
+    public ControladorGuardaCandidato(JPanelCreateCandidato jPanelCreateCandidato, Candidato c) {
+        candidato = new Candidato();
+        jPanelCreateCandidato = new JPanelCreateCandidato();
         this.jPanelCreateCandidato = jPanelCreateCandidato;
+        this.candidato= c;
+        jPanelCreateCandidato.jbttnGuardar.addActionListener(this); 
     }
     
     
     public void actionPerformed(ActionEvent e){
-        candidato = new Candidato();
+
         tesis = new Tesis();
-        jPanelCreateCandidato = new JPanelCreateCandidato();
         adminBD = new AdminBD();
         candidato.setNombre(jPanelCreateCandidato.jtxtNombre.getText());
         candidato.setApellidoPaterno(jPanelCreateCandidato.jtxtApellidoPaterno.getText());
@@ -62,7 +65,7 @@ public class ControladorGuardaCandidato implements ActionListener{
         
         /*agregamos a la base de datos*/
         //grupo.setCandidato(candidato);
-        adminBD.insertarCandidato(candidato);
+        adminBD.insertarCandidato(this.candidato);
     }
     
 public void asignaGrupo(Grupo grupo){

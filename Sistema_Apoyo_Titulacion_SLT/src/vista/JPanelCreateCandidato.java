@@ -5,17 +5,25 @@
  */
 package vista;
 
+import controlador.ControladorGuardaCandidato;
+import modelo.Candidato;
+
 /**
  *
  * @author Jhon Nash
  */
 public class JPanelCreateCandidato extends javax.swing.JPanel {
-
+    ControladorGuardaCandidato cgc;
     /**
      * Creates new form JPanelCreateCandidato
      */
     public JPanelCreateCandidato() {
         initComponents();
+    }
+    
+    public void asignaRadar(){
+        this.jbttnGuardar.addActionListener(cgc);
+        
     }
 
     /**
@@ -77,12 +85,6 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
 
         jlabNombre.setText("Nombre de Candidato");
 
-        jtxtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtNombreActionPerformed(evt);
-            }
-        });
-
         jLabApPaterno.setText("Apellido Paterno");
 
         jLabApMaterno.setText("Apellido Materno");
@@ -98,11 +100,6 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         jLabCarrera.setText("Carrera");
 
         jComBoxCarrera.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jComBoxCarrera.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComBoxCarreraActionPerformed(evt);
-            }
-        });
 
         jLabNomTesis.setText("Nombre de Tesis");
 
@@ -149,6 +146,11 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         jbttnCancelar.setText("Cancelar");
 
         jbttnGuardar.setText("Guardar");
+        jbttnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbttnGuardarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Acepto Terminos y condiciones de uso");
 
@@ -160,12 +162,6 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         jLabel5.setText("Telefono");
 
         jlblCreditos.setText("Creditos");
-
-        jtxtAnioMatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtAnioMatriculaActionPerformed(evt);
-            }
-        });
 
         jtxtPlantelMatricula.setEditable(false);
         jtxtPlantelMatricula.setText("003");
@@ -392,14 +388,6 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtNombreActionPerformed
-
-    private void jComBoxCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComBoxCarreraActionPerformed
-
-    }//GEN-LAST:event_jComBoxCarreraActionPerformed
-
     private void jRadBtSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadBtSiActionPerformed
         /*this.jtxtEntidad.setEditable(true);
         this.jComBoxHora.setEnabled(true);
@@ -416,9 +404,13 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         */
     }//GEN-LAST:event_jRadBtnNoActionPerformed
 
-    private void jtxtAnioMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtAnioMatriculaActionPerformed
+    private void jbttnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnGuardarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtAnioMatriculaActionPerformed
+        Candidato candidato = null;
+        ControladorGuardaCandidato cntrldrGurdCandidato;
+        cntrldrGurdCandidato = new ControladorGuardaCandidato(this, candidato);
+        
+    }//GEN-LAST:event_jbttnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

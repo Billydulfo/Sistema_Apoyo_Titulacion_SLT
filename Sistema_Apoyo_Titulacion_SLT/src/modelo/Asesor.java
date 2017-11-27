@@ -4,12 +4,10 @@ public class Asesor extends Persona{
     private String cubiculo;
     private Horario horarioAsesorias;
 
-    public Asesor(String cubiculo, Horario horarioAsesorias, String nombre,
-            String apellidoPaterno, String apellidoMaterno, 
-            String correoElectronico, int telefono) {
-        super(nombre, apellidoPaterno, apellidoMaterno, correoElectronico, telefono);
-        this.cubiculo = cubiculo;
-        this.horarioAsesorias = horarioAsesorias;
+    public Asesor() {
+        super();
+        this.cubiculo = null;
+        this.horarioAsesorias = null;
     }
     
     public Horario getHorarioAsesorias() {

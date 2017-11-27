@@ -5,13 +5,31 @@ public class Persona {
     private String apellidoMaterno;
     private String correoElectronico;
     private int telefono;
-    public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronico, int telefono) {
+    public Persona() {
+        this.nombre = null;
+        this.apellidoPaterno = null;
+        this.apellidoMaterno = null;
+        this.correoElectronico = null;
+        this.telefono = 0;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setApellidoPaterno(String apellidoPaterno) {
         this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
+    }
+
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
+    
+    
     public String getNombre() {
         return nombre;
     }
