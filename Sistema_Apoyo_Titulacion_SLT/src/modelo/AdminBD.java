@@ -28,11 +28,8 @@ public class AdminBD {
         private Carrera carrera = new Carrera();
         private Grupo grupo = new Grupo();
         private Horario horario= new Horario();
-        private Lugar lugar = new Lugar();
         private Persona persona = new Persona();
-        private Seminario seminario = new Seminario();
         private Tesis tesis = new Tesis();
-        private Trabajo trabajo = new Trabajo();
 
         private DefaultTableModel catalogos;
 
@@ -41,7 +38,7 @@ public class AdminBD {
 	  controladorBD= "org.postgresql.Driver";
 	  host= "127.0.0.1";
 	  puerto = "5432";
-	  baseDatos="sat";/*nombre de la base de datos */
+	  baseDatos="bd17";/*nombre de la base de datos */
 	  url ="jdbc:postgresql://"+host+":"+puerto+"/"+baseDatos;
 	  usuario="postgres";
 	  contraseña="p057gr35";
@@ -71,17 +68,17 @@ public class AdminBD {
             String ordenSQL=null;
             Statement proposicion=null;
                 /*variables de candidato*/
+            int foto = 0;
             String nombre = null;
             String apellidoPaterno = null;
             String apellidoMaterno = null;
             String correoElectronico = null;
-            int telefono = 0;
-            int foto = 0;
+            String telefono = null;
             String matricula = null;
             String generacion = null;
             Carrera carrera = null;
-            Trabajo trabajo = null;
             Tesis tesis = null;
+            String creditos = null;
             String valores = null;
 		
                 /*buscamos guardar info de candidato en la base de datos*/
@@ -93,10 +90,10 @@ public class AdminBD {
             matricula = candidato.getMatricula();
             generacion = candidato.getGeneracion();
             carrera = candidato.getCarrera();
-            trabajo = candidato.getTrabajo();
             tesis = candidato.getTesis();
-            telefono = candidato.getTelefono();
+            telefono = Integer.toString(candidato.getTelefono());
             foto = candidato.getFoto();
+            creditos = candidato.getCreditos();
                    
                 /*  anteriormemte agregamos imagen con este codigo
                     imagen= hongo.getBytesImg();
@@ -108,9 +105,8 @@ public class AdminBD {
 		if(conexion != null){
 			try{
 		       		proposicion = conexion.createStatement();//sirve para conectarse sabe ir a la base de datos y ejecuta lo que le pidamos 
-			   	valores= "'"+matricula+"','"+nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"','"+correoElectronico+"','"+generacion+"','"+telefono+"','"+telefono+"'"; 
-		       		ordenSQL="INSERT INTO candidato VALUES("+valores+") ";
-
+			   	valores= "'a','b','c','d','e','satt','sad','snc','f','sat','sin asignar','sac'"; 
+		       		ordenSQL="INSERT INTO candidatos VALUES("+valores+") ";
 		       		System.out.println(ordenSQL);
 	           		proposicion.executeUpdate(ordenSQL);//para modificar la base de datos por eso no se necesita un result set
 	           		proposicion.close();
@@ -130,8 +126,7 @@ public class AdminBD {
 		return mensaje;
 	}
 	
-        
-        
+             
         
             public String insertarAsesor(Asesor asesor){
             
@@ -144,28 +139,28 @@ public class AdminBD {
             String apellidoMaterno = null;
             String correoElectronico = null;
             int telefono = 0;
-            String numeroTrabajador = null;
             String cubiculo = null;
-
+            Horario horario = null;
+            String privilegios= null;
             String valores = null;
 		
-                //buscamos guardar info de candidato en la base de datos
+             //buscamos guardar info de candidato en la base de datos
             this.asesor = asesor;
             nombre= asesor.getNombre();
             apellidoPaterno = asesor.getApellidoPaterno();
             apellidoMaterno = asesor.getApellidoMaterno();
             correoElectronico = asesor.getCorreoElectronico();
-            numeroTrabajador = asesor.getNumeroTrabajador();
             telefono = asesor.getTelefono();
             cubiculo = asesor.getCubiculo();
+            privilegios= "no privilegios";
 
 		mensaje = conectate();
 		
 		if(conexion != null){
 			try{
 		       		proposicion = conexion.createStatement();//sirve para conectarse sabe ir a la base de datos y ejecuta lo que le pidamos 
-			   	valores= "'"+numeroTrabajador+"','"+nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"','"+correoElectronico+"','"+telefono+"','"+cubiculo+"'"; 
-		       		ordenSQL="INSERT INTO asesor VALUES("+valores+") ";
+			   	valores= "'"+nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"','"+telefono+"','"+cubiculo+"','"+correoElectronico+"','"+privilegios+"'"; 
+		       		ordenSQL="INSERT INTO asesores VALUES("+valores+") ";
 
 		       		System.out.println(ordenSQL);
 	           		proposicion.executeUpdate(ordenSQL);//para modificar la base de datos por eso no se necesita un result set
