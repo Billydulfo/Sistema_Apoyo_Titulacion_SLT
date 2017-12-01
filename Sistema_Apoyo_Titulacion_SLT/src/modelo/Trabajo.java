@@ -11,7 +11,7 @@ package modelo;
  */
 public class Trabajo {
     private String nombreEntidad;
-    private Horario horario;
+    private mHorario horario;
 
     public Trabajo() {
         nombreEntidad= null;
@@ -25,10 +25,10 @@ public class Trabajo {
         this.nombreEntidad = nombreEntidad;
     }
     
-     public void    setHorario(Horario horario) {
+     public void    setHorario(mHorario horario) {
         this.horario = horario;
     }
-    public Horario getHorario() {
+    public mHorario getHorario() {
         return horario;
     }
 }

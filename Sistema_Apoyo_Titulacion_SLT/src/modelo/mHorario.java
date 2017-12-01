@@ -4,7 +4,7 @@ public class mHorario {
     private String dia;
     private String horaInicio;
     private String horaFin;
-    //Comentarios :)
+    
     public mHorario(String dia, String horaInicio, String horaFin) {
         this.dia = dia;
         this.horaInicio = horaInicio;
