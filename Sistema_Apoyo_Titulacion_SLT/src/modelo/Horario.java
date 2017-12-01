@@ -4,6 +4,7 @@ public class Horario {
     private String dia;
     private Date horaInicio;
     private Date horaFin;
+    //Agraga comentarios en Horario
     public String getDia() {
         return dia;
     }
