@@ -3,7 +3,7 @@ public class Asesor extends Persona{
     
     private String cubiculo;
     private mHorario horarioAsesorias;
-
+//aGRAGACION DE COM
     public Asesor() {
         super();
         this.cubiculo = null;
