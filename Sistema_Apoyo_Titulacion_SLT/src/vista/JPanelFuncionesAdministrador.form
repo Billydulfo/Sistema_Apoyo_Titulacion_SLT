@@ -54,11 +54,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jbttnIniciaRegistro" max="32767" attributes="0"/>
-                      <Component id="jbttnFinalizaRegistro" pref="173" max="32767" attributes="0"/>
                       <Component id="jbttnAceptaCandidatos" max="32767" attributes="0"/>
                       <Component id="jbttnAsignaPrivilegios" max="32767" attributes="0"/>
-                      <Component id="jbttnAsignarAsesorGrupo" max="32767" attributes="0"/>
+                      <Component id="jbttnAsignarAsesorGrupo" pref="173" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="26" max="32767" attributes="0"/>
               </Group>
@@ -67,11 +65,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jbttnIniciaRegistro" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                  <Component id="jbttnFinalizaRegistro" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
                   <Component id="jbttnAceptaCandidatos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jbttnAsignaPrivilegios" min="-2" max="-2" attributes="0"/>
@@ -83,16 +77,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jbttnIniciaRegistro">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Inicia Registro a Seminario"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jbttnFinalizaRegistro">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Finaliza Registro a Seminario"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="jbttnAceptaCandidatos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Acepta Candidatos"/>

@@ -23,23 +23,21 @@ public class ControladorGuardaAsesor implements ActionListener{
     private JPanelCreateAsesor jPanelCreateAsesor;
 
     public ControladorGuardaAsesor(JPanelCreateAsesor jPanelCreateAsesor) {
+        horario = new Horario();
+        adminBD = new AdminBD();
+        asesor = new Asesor();
+        
         this.jPanelCreateAsesor = jPanelCreateAsesor;
+        jPanelCreateAsesor.jbttnGuardar.addActionListener(this);
     }
     
     public void actionPerformed(ActionEvent e){
-        asesor = new Asesor();
-        horario = new Horario();
-        adminBD = new AdminBD();
-        jPanelCreateAsesor = new JPanelCreateAsesor();
-        
         asesor.setNombre(jPanelCreateAsesor.jtxtNombreAsesor.getText());
         asesor.setApellidoPaterno(jPanelCreateAsesor.jtxtApellidoPaterno.getText());
         asesor.setApellidoMaterno(jPanelCreateAsesor.jtxtApellidoMaterno.getText());
         asesor.setCorreoElectronico(jPanelCreateAsesor.jtxtCorrEleAsesor.getText());
         asesor.setTelefono(Integer.parseInt(jPanelCreateAsesor.jtxtTelefono.getText()));
         asesor.setCubiculo(jPanelCreateAsesor.jtxtCubiculo.getText());
-        /**/
-        
         /*guardamos en la bd17*/
         adminBD.insertarAsesor(asesor);       
     }

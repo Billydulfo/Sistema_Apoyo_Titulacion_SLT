@@ -73,31 +73,44 @@ public class AdminBD {
             String apellidoPaterno = null;
             String apellidoMaterno = null;
             String correoElectronico = null;
+            String nombreTesis = null;
+            String directorTesis = null;
+            String creditos = null;
+            String nombreCarrera = null;
             String telefono = null;
             String matricula = null;
             String generacion = null;
             Carrera carrera = null;
             Tesis tesis = null;
-            String creditos = null;
+            
             String valores = null;
+           
 		
-                /*buscamos guardar info de candidato en la base de datos*/
+                /*guarda info de candidato en la base de datos*/
             this.candidato = candidato;
+            
+            /*variables de Candidato*/
+            matricula = candidato.getMatricula();
+            creditos = candidato.getCreditos();
+            generacion = candidato.getGeneracion();
+            
             nombre= candidato.getNombre();
             apellidoPaterno = candidato.getApellidoPaterno();
             apellidoMaterno = candidato.getApellidoMaterno();
             correoElectronico = candidato.getCorreoElectronico();
-            matricula = candidato.getMatricula();
-            generacion = candidato.getGeneracion();
-            carrera = candidato.getCarrera();
-            tesis = candidato.getTesis();
             telefono = Integer.toString(candidato.getTelefono());
-            foto = candidato.getFoto();
+                /*Variables de tesis*/
+            tesis = candidato.getTesis();
+            nombreTesis= tesis.getTema();
+            directorTesis= tesis.getDirector();
             creditos = candidato.getCreditos();
-                   
+                /*vaeriables de carrera*/
+            //carrera = candidato.getCarrera();
+            //nombreCarrera = carrera.getNombre();
+          
+            //foto = candidato.getFoto();
                 /*  anteriormemte agregamos imagen con este codigo
                     imagen= hongo.getBytesImg();
-
                 */
 
 		mensaje = conectate();
@@ -105,7 +118,7 @@ public class AdminBD {
 		if(conexion != null){
 			try{
 		       		proposicion = conexion.createStatement();//sirve para conectarse sabe ir a la base de datos y ejecuta lo que le pidamos 
-			   	valores= "'"+nombre+"','aez','cuc','hulk','free','ta','sa','gr','ter','tw','sin asignar','sac'"; 
+			   	valores= "'"+matricula+"','"+ nombre+"','"+apellidoPaterno+"','"+apellidoMaterno+"','"+correoElectronico+"','"+nombreTesis+"','"+directorTesis+"','"+creditos+"','"+generacion+"','"+telefono+"','sin asignar','Ingenieria de software'"; 
 		       		ordenSQL="INSERT INTO candidatos VALUES("+valores+") ";
 		       		System.out.println(ordenSQL);
 	           		proposicion.executeUpdate(ordenSQL);//para modificar la base de datos por eso no se necesita un result set
@@ -138,7 +151,7 @@ public class AdminBD {
             String apellidoPaterno = null;
             String apellidoMaterno = null;
             String correoElectronico = null;
-            int telefono = 0;
+            String telefono = null;
             String cubiculo = null;
             Horario horario = null;
             String privilegios= null;
@@ -150,7 +163,7 @@ public class AdminBD {
             apellidoPaterno = asesor.getApellidoPaterno();
             apellidoMaterno = asesor.getApellidoMaterno();
             correoElectronico = asesor.getCorreoElectronico();
-            telefono = asesor.getTelefono();
+            telefono = Integer.toString(asesor.getTelefono());
             cubiculo = asesor.getCubiculo();
             privilegios= "no privilegios";
 

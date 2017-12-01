@@ -2,7 +2,7 @@ package modelo;
 public class Asesor extends Persona{
     
     private String cubiculo;
-    private mHorario horarioAsesorias;
+    private Horario horarioAsesorias;
 
     public Asesor() {
         super();
@@ -10,10 +10,10 @@ public class Asesor extends Persona{
         this.horarioAsesorias = null;
     }
     
-    public mHorario getHorarioAsesorias() {
+    public Horario getHorarioAsesorias() {
         return horarioAsesorias;
     }
-    public void    setHorarioAsesorias(mHorario horarioAsesorias) {
+    public void    setHorarioAsesorias(Horario horarioAsesorias) {
         this.horarioAsesorias = horarioAsesorias;
     }
     public String  getCubiculo() {

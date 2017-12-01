@@ -28,28 +28,35 @@ public class ControladorGuardaCandidato implements ActionListener{
     private AdminBD adminBD;
     private JPanelCreateCandidato jPanelCreateCandidato;
 
-    public ControladorGuardaCandidato(JPanelCreateCandidato jPanelCreateCandidato, Candidato c) {
+    public ControladorGuardaCandidato(JPanelCreateCandidato jPanelCreateCandidato) {
         candidato = new Candidato();
-        jPanelCreateCandidato = new JPanelCreateCandidato();
+        tesis = new Tesis();
+        adminBD = new AdminBD();
+        
+        
         this.jPanelCreateCandidato = jPanelCreateCandidato;
-        this.candidato= c;
         jPanelCreateCandidato.jbttnGuardar.addActionListener(this); 
     }
     
     
     public void actionPerformed(ActionEvent e){
-
-        tesis = new Tesis();
-        adminBD = new AdminBD();
+        String matriculaEst;
+        
         candidato.setNombre(jPanelCreateCandidato.jtxtNombre.getText());
         candidato.setApellidoPaterno(jPanelCreateCandidato.jtxtApellidoPaterno.getText());
         candidato.setApellidoMaterno(jPanelCreateCandidato.jtxtApellidoMaterno.getText());
         candidato.setCorreoElectronico(jPanelCreateCandidato.jtxtCorrElectronico.getText());
-        //candidato.setTelefono(Integer.parseInt(jPanelCreateCandidato.jtxtTelefono.getText()));
-        candidato.setMatricula(jPanelCreateCandidato.jtxtMatricula.getText());
+        candidato.setTelefono(Integer.parseInt(jPanelCreateCandidato.jtxtTelefono.getText()));
+        /*la captura de matricula se hace por partes*/
+        matriculaEst = jPanelCreateCandidato.jtxtAnioMatricula.getText() +
+                "-"+jPanelCreateCandidato.jtxtPlantelMatricula.getText()+
+                "-"+jPanelCreateCandidato.jtxtMatricula.getText();
+        
+        candidato.setMatricula(matriculaEst);
         candidato.setGeneracion(jPanelCreateCandidato.jtxtGeneracion.getText());
+        candidato.setCreditos(jPanelCreateCandidato.jSpinnerCreditos.getToolTipText());/*anexado spinner credtidos 30/11/17*/
         /*acciones para carrera*/
-        //carrera.setNombre(jPanelCreateCandidato.jComBoxCarrera.getSelectedItem().toString());
+        //carrera.setNombre(jPanelCreateCandidato.jComBoxCarrera.toString());/*aqui se carga la tabla carreras*/
         candidato.setCarrera(carrera);
         /*acciones para tesis*/
         tesis.setTema(jPanelCreateCandidato.jtxtNomTesis.getText());
@@ -67,9 +74,5 @@ public class ControladorGuardaCandidato implements ActionListener{
         //grupo.setCandidato(candidato);
         adminBD.insertarCandidato(this.candidato);
     }
-    
-public void asignaGrupo(Grupo grupo){
-    this.grupo = grupo;
-}
     
 }

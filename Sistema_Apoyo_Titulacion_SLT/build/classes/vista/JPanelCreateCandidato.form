@@ -62,23 +62,6 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabApMaterno" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jtxtApellidoMaterno" min="-2" pref="96" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabApPaterno" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jtxtApellidoPaterno" min="-2" pref="96" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jlabNombre" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jtxtNombre" min="-2" pref="96" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabCorrElectronico" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -100,17 +83,30 @@
                                           <Component id="jtxtMatricula" alignment="1" min="-2" pref="36" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabApMaterno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabApPaterno" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jlabNombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jtxtNombre" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <Component id="jtxtApellidoPaterno" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <Component id="jtxtApellidoMaterno" min="-2" pref="96" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace pref="55" max="32767" attributes="0"/>
                                       <Component id="jButtonAddFotoCandidato" min="-2" pref="121" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                       <Component id="jlblCreditos" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jSpinnerCreditos" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jSpinnerCreditos" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -187,11 +183,11 @@
                           <Component id="jtxtApellidoPaterno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabApMaterno" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtxtApellidoMaterno" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabApMaterno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtApellidoMaterno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabCorrElectronico" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jtxtCorrElectronico" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -300,10 +296,13 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jlabNombre">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre de Candidato"/>
+        <Property name="text" type="java.lang.String" value="Nombre "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtNombre">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtNombreKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -314,6 +313,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtApellidoPaterno">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtApellidoPaternoKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -324,6 +326,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtApellidoMaterno">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtApellidoMaternoKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -334,6 +339,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtCorrElectronico">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtCorrElectronicoKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -354,6 +362,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtMatricula">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtMatriculaKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -364,6 +375,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtGeneracion">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtGeneracionKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -395,6 +409,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtNomTesis">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtNomTesisKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -405,6 +422,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtDircTesis">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtDircTesisKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -464,6 +484,9 @@
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtEntidadKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -560,6 +583,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtTelefono">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtTelefonoKeyTyped"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -575,12 +601,21 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtAnioMatricula">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtxtAnioMatriculaKeyTyped"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtPlantelMatricula">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="text" type="java.lang.String" value="003"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="jbttnEditar">
       <Properties>

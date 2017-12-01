@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package vista;
-
+/*realice un comentario para verificar git local*/
 /**
  *
  * @author Jhon Nash
@@ -28,18 +28,12 @@ public class JPanelFuncionesAdministrador extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelFunciones = new javax.swing.JPanel();
-        jbttnIniciaRegistro = new javax.swing.JButton();
-        jbttnFinalizaRegistro = new javax.swing.JButton();
         jbttnAceptaCandidatos = new javax.swing.JButton();
         jbttnAsignaPrivilegios = new javax.swing.JButton();
         jbttnAsignarAsesorGrupo = new javax.swing.JButton();
         jbttnSalir = new javax.swing.JButton();
 
         jPanelFunciones.setBorder(javax.swing.BorderFactory.createTitledBorder("Funciones Administrador"));
-
-        jbttnIniciaRegistro.setText("Inicia Registro a Seminario");
-
-        jbttnFinalizaRegistro.setText("Finaliza Registro a Seminario");
 
         jbttnAceptaCandidatos.setText("Acepta Candidatos");
 
@@ -54,21 +48,15 @@ public class JPanelFuncionesAdministrador extends javax.swing.JPanel {
             .addGroup(jPanelFuncionesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jbttnIniciaRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbttnFinalizaRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                     .addComponent(jbttnAceptaCandidatos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jbttnAsignaPrivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jbttnAsignarAsesorGrupo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jbttnAsignarAsesorGrupo, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanelFuncionesLayout.setVerticalGroup(
             jPanelFuncionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelFuncionesLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jbttnIniciaRegistro)
-                .addGap(16, 16, 16)
-                .addComponent(jbttnFinalizaRegistro)
-                .addGap(18, 18, 18)
+                .addGap(107, 107, 107)
                 .addComponent(jbttnAceptaCandidatos)
                 .addGap(18, 18, 18)
                 .addComponent(jbttnAsignaPrivilegios)
@@ -107,8 +95,6 @@ public class JPanelFuncionesAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton jbttnAceptaCandidatos;
     private javax.swing.JButton jbttnAsignaPrivilegios;
     private javax.swing.JButton jbttnAsignarAsesorGrupo;
-    private javax.swing.JButton jbttnFinalizaRegistro;
-    private javax.swing.JButton jbttnIniciaRegistro;
     private javax.swing.JButton jbttnSalir;
     // End of variables declaration//GEN-END:variables
 }

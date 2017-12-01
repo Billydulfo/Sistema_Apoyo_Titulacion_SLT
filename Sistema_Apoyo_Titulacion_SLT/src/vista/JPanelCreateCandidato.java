@@ -6,24 +6,18 @@
 package vista;
 
 import controlador.ControladorGuardaCandidato;
-import modelo.Candidato;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Jhon Nash
  */
 public class JPanelCreateCandidato extends javax.swing.JPanel {
-    ControladorGuardaCandidato cgc;
     /**
      * Creates new form JPanelCreateCandidato
      */
     public JPanelCreateCandidato() {
         initComponents();
-    }
-    
-    public void asignaRadar(){
-        this.jbttnGuardar.addActionListener(cgc);
-        
     }
 
     /**
@@ -83,19 +77,55 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         jtxtPlantelMatricula = new javax.swing.JTextField();
         jbttnEditar = new javax.swing.JButton();
 
-        jlabNombre.setText("Nombre de Candidato");
+        jlabNombre.setText("Nombre ");
+
+        jtxtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNombreKeyTyped(evt);
+            }
+        });
 
         jLabApPaterno.setText("Apellido Paterno");
 
+        jtxtApellidoPaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtApellidoPaternoKeyTyped(evt);
+            }
+        });
+
         jLabApMaterno.setText("Apellido Materno");
 
+        jtxtApellidoMaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtApellidoMaternoKeyTyped(evt);
+            }
+        });
+
         jLabCorrElectronico.setText("Correo Electronico");
+
+        jtxtCorrElectronico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtCorrElectronicoKeyTyped(evt);
+            }
+        });
 
         jButtonAddFotoCandidato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/addFoto.png"))); // NOI18N
 
         jLabMatricula.setText("Matricula");
 
+        jtxtMatricula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtMatriculaKeyTyped(evt);
+            }
+        });
+
         jLabGeneracion.setText("Generacion");
+
+        jtxtGeneracion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtGeneracionKeyTyped(evt);
+            }
+        });
 
         jLabCarrera.setText("Carrera");
 
@@ -103,7 +133,19 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
 
         jLabNomTesis.setText("Nombre de Tesis");
 
+        jtxtNomTesis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNomTesisKeyTyped(evt);
+            }
+        });
+
         jLabDircTesis.setText("Director de Tesis");
+
+        jtxtDircTesis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtDircTesisKeyTyped(evt);
+            }
+        });
 
         jbttnCartaCompromiso.setText("Carta Compromiso");
 
@@ -129,6 +171,11 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
         jLabLugar1.setText("Entidad");
 
         jtxtEntidad.setEnabled(false);
+        jtxtEntidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtEntidadKeyTyped(evt);
+            }
+        });
 
         jbttnCartaExposicionMotivos.setText("Carta Exposicion");
 
@@ -161,7 +208,19 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
 
         jLabel5.setText("Telefono");
 
+        jtxtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtTelefonoKeyTyped(evt);
+            }
+        });
+
         jlblCreditos.setText("Creditos");
+
+        jtxtAnioMatricula.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtAnioMatriculaKeyTyped(evt);
+            }
+        });
 
         jtxtPlantelMatricula.setEditable(false);
         jtxtPlantelMatricula.setText("003");
@@ -210,19 +269,6 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabApMaterno)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabApPaterno)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jlabNombre)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabCorrElectronico)
@@ -238,7 +284,17 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
                                                 .addComponent(jRadBtnNo)
                                                 .addComponent(jtxtDircTesis, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(jtxtGeneracion, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jtxtMatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jtxtMatricula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabApMaterno)
+                                            .addComponent(jLabApPaterno)
+                                            .addComponent(jlabNombre))
+                                        .addGap(26, 26, 26)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jtxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
@@ -247,7 +303,7 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
                                         .addGap(57, 57, 57)
                                         .addComponent(jlblCreditos)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jSpinnerCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jSpinnerCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -302,10 +358,10 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
                             .addComponent(jLabApPaterno)
                             .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabApMaterno)
                             .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabCorrElectronico)
                             .addComponent(jtxtCorrElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -406,11 +462,127 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
 
     private void jbttnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnGuardarActionPerformed
         // TODO add your handling code here:
-        Candidato candidato = null;
         ControladorGuardaCandidato cntrldrGurdCandidato;
-        cntrldrGurdCandidato = new ControladorGuardaCandidato(this, candidato);
+        if(jtxtNombre.getText().isEmpty()|| jtxtApellidoPaterno.getText().isEmpty()||
+                this.jtxtApellidoMaterno.getText().isEmpty()|| 
+                this.jtxtCorrElectronico.getText().isEmpty()|| 
+                this.jtxtTelefono.getText().isEmpty()|| 
+                this.jtxtAnioMatricula.getText().isEmpty()||
+                this.jtxtMatricula.getText().isEmpty()|| 
+                this.jtxtGeneracion.getText().isEmpty()||
+                this.jtxtNomTesis.getText().isEmpty()|| 
+                this.jtxtDircTesis.getText().isEmpty()){
+            JOptionPane.showMessageDialog(jlblCreditos, "No deje campos vacios ");   
+        }else{
+            cntrldrGurdCandidato = new ControladorGuardaCandidato(this);
+            this.setVisible(false);
+        }
+        
+        
+        
+        
         
     }//GEN-LAST:event_jbttnGuardarActionPerformed
+
+    private void jtxtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNombreKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=20;
+        if(jtxtNombre.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 20 caracteres aceptados ");   
+        } 
+    }//GEN-LAST:event_jtxtNombreKeyTyped
+
+    private void jtxtApellidoPaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtApellidoPaternoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=20;
+        if(jtxtApellidoPaterno.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 20 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtApellidoPaternoKeyTyped
+
+    private void jtxtApellidoMaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtApellidoMaternoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=20;
+        if(jtxtApellidoMaterno.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 20 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtApellidoMaternoKeyTyped
+
+    private void jtxtCorrElectronicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtCorrElectronicoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=30;
+        if(jtxtCorrElectronico.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 30 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtCorrElectronicoKeyTyped
+
+    private void jtxtAnioMatriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtAnioMatriculaKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=2;
+        if(jtxtAnioMatricula.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 2 digitos aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtAnioMatriculaKeyTyped
+
+    private void jtxtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtTelefonoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=15;
+        if(jtxtTelefono.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 15 digitos aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtTelefonoKeyTyped
+
+    private void jtxtMatriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtMatriculaKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=4;
+        if(jtxtMatricula.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 4 digitos aceptados ");   
+        }
+        
+    }//GEN-LAST:event_jtxtMatriculaKeyTyped
+
+    private void jtxtGeneracionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtGeneracionKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=4;
+        if(jtxtGeneracion.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 4 digitos aceptados");   
+        }
+    }//GEN-LAST:event_jtxtGeneracionKeyTyped
+
+    private void jtxtNomTesisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNomTesisKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=40;
+        if(jtxtNomTesis.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 40 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtNomTesisKeyTyped
+
+    private void jtxtDircTesisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtDircTesisKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=40;
+        if(jtxtDircTesis.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 40 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtDircTesisKeyTyped
+
+    private void jtxtEntidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtEntidadKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=40;
+        if(jtxtEntidad.getText().length() >=maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jlabNombre, "Solo 40 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtEntidadKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -449,7 +621,7 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
     public javax.swing.JButton jbttnHorarioCandidato;
     private javax.swing.JLabel jlabNombre;
     private javax.swing.JLabel jlblCreditos;
-    private javax.swing.JTextField jtxtAnioMatricula;
+    public javax.swing.JTextField jtxtAnioMatricula;
     public javax.swing.JTextField jtxtApellidoMaterno;
     public javax.swing.JTextField jtxtApellidoPaterno;
     public javax.swing.JTextField jtxtCorrElectronico;
@@ -459,7 +631,7 @@ public class JPanelCreateCandidato extends javax.swing.JPanel {
     public javax.swing.JTextField jtxtMatricula;
     public javax.swing.JTextField jtxtNomTesis;
     public javax.swing.JTextField jtxtNombre;
-    private javax.swing.JTextField jtxtPlantelMatricula;
+    public javax.swing.JTextField jtxtPlantelMatricula;
     public javax.swing.JTextField jtxtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,19 +6,17 @@
 package vista;
 
 import controlador.ControladorGuardaAsesor;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author Jhon Nash
  */
 public class JPanelCreateAsesor extends javax.swing.JPanel {
-    ControladorGuardaAsesor cga;
 
     /**
      * Creates new form JPanelCreateAsesor
      */
     public JPanelCreateAsesor() {
-        cga = new ControladorGuardaAsesor(this);
         initComponents();
     }
 
@@ -64,17 +62,53 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
 
         jLabNomAsesor.setText("Nombre");
 
+        jtxtNombreAsesor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtNombreAsesorKeyTyped(evt);
+            }
+        });
+
         jlblApellidoPaterno.setText("Apellido Paterno");
+
+        jtxtApellidoPaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtApellidoPaternoKeyTyped(evt);
+            }
+        });
 
         jlblApellicoMaterno.setText("Apellido Materno");
 
+        jtxtApellidoMaterno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtApellidoMaternoKeyTyped(evt);
+            }
+        });
+
         jblCorrEletrAsesor.setText("Correo electronico ");
 
+        jtxtCorrEleAsesor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtCorrEleAsesorKeyTyped(evt);
+            }
+        });
+
         jlblTelefono.setText("Telefono");
+
+        jtxtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtTelefonoKeyTyped(evt);
+            }
+        });
 
         jlblDatosLaborales.setText("Datos Laborales");
 
         jLabCubiculo.setText("Cubiculo");
+
+        jtxtCubiculo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jtxtCubiculoKeyTyped(evt);
+            }
+        });
 
         jLabHrAsesor.setText("Horario de asesorias");
 
@@ -96,7 +130,11 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
         jbttnCancelar.setText("Cancelar");
 
         jbttnGuardar.setText("Guardar");
-        jbttnGuardar.addActionListener(cga);
+        jbttnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbttnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,31 +157,6 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlblApellidoPaterno)
-                                .addGap(30, 30, 30)
-                                .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabNomAsesor)
-                                .addGap(71, 71, 71)
-                                .addComponent(jtxtNombreAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
-                        .addGap(33, 33, 33)
-                        .addComponent(jbttnEditarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jblCorrEletrAsesor)
-                            .addComponent(jlblTelefono))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtTelefono)
-                            .addComponent(jtxtCorrEleAsesor))
-                        .addGap(182, 182, 182))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -154,9 +167,7 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                                 .addComponent(jLabHrAsesor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jbttnCrearAsesorias, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbttnAdministrarSeminario, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jSeparator4)
                     .addComponent(jSeparator5)
                     .addGroup(layout.createSequentialGroup()
@@ -165,7 +176,31 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                         .addComponent(jRdBttnCondicionesSi)
                         .addGap(18, 18, 18)
                         .addComponent(jRdBttnCondicionesNo)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 54, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabNomAsesor)
+                                    .addComponent(jlblApellidoPaterno))
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtxtApellidoPaterno)
+                                    .addComponent(jtxtNombreAsesor)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jblCorrEletrAsesor)
+                                    .addComponent(jlblTelefono))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jtxtTelefono)
+                                    .addComponent(jtxtCorrEleAsesor))))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jbttnAdministrarSeminario, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                            .addComponent(jbttnEditarAsesor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(45, 45, 45))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(130, 130, 130)
                 .addComponent(jbttnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,17 +216,15 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabNomAsesor)
-                            .addComponent(jtxtNombreAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlblApellidoPaterno)
-                            .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jbttnEditarAsesor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabNomAsesor)
+                    .addComponent(jtxtNombreAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblApellidoPaterno)
+                    .addComponent(jtxtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbttnEditarAsesor, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblApellicoMaterno)
                     .addComponent(jtxtApellidoMaterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,18 +235,18 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblTelefono)
-                    .addComponent(jtxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtxtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbttnAdministrarSeminario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jlblDatosLaborales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 5, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabCubiculo)
-                    .addComponent(jtxtCubiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbttnAdministrarSeminario))
+                    .addComponent(jtxtCubiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabHrAsesor)
@@ -231,9 +264,83 @@ public class JPanelCreateAsesor extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbttnCancelar)
                     .addComponent(jbttnGuardar))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbttnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnGuardarActionPerformed
+        // TODO add your handling code here:
+        ControladorGuardaAsesor controladorGuardaAsesor;
+        
+        if(jtxtNombreAsesor.getText().isEmpty()|| jtxtApellidoPaterno.getText().isEmpty()||
+                this.jtxtApellidoMaterno.getText().isEmpty()|| 
+                this.jtxtCorrEleAsesor.getText().isEmpty()|| 
+                this.jtxtCubiculo.getText().isEmpty()|| 
+                this.jtxtTelefono.getText().isEmpty()){
+            JOptionPane.showMessageDialog(jLabNomAsesor, "No deje campos vacios ");   
+        }else{
+            controladorGuardaAsesor = new ControladorGuardaAsesor(this);
+            
+        }
+        
+        
+       
+    }//GEN-LAST:event_jbttnGuardarActionPerformed
+
+    private void jtxtNombreAsesorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtNombreAsesorKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=20;
+        if(jtxtNombreAsesor.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 20 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtNombreAsesorKeyTyped
+
+    private void jtxtApellidoPaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtApellidoPaternoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=30;
+        if(jtxtApellidoPaterno.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 30 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtApellidoPaternoKeyTyped
+
+    private void jtxtApellidoMaternoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtApellidoMaternoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=30;
+        if(jtxtApellidoMaterno.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 30 caracteres aceptados ");   
+        }
+        
+    }//GEN-LAST:event_jtxtApellidoMaternoKeyTyped
+
+    private void jtxtCorrEleAsesorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtCorrEleAsesorKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena=30;
+        if(jtxtCorrEleAsesor.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 30 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtCorrEleAsesorKeyTyped
+
+    private void jtxtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtTelefonoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena = 15;
+        if(jtxtTelefono.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 15 Digitos aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtTelefonoKeyTyped
+
+    private void jtxtCubiculoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtxtCubiculoKeyTyped
+        // TODO add your handling code here:
+        int maximoCadena = 10;
+        if(jtxtCubiculo.getText().length() >= maximoCadena){
+            evt.consume();
+            JOptionPane.showMessageDialog(jLabNomAsesor, "Solo 10 caracteres aceptados ");   
+        }
+    }//GEN-LAST:event_jtxtCubiculoKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

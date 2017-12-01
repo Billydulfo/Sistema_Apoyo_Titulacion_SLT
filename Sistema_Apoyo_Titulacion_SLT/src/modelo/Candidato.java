@@ -10,24 +10,7 @@ public class Candidato extends Persona{
     private boolean cartaCompromiso;
     private boolean cartaExp;
     private String  nombreEntidad;
-   /* public Candidato(String nombre,String apellidoPaterno,
-            String apellidoMaterno,String correoElectronico,int telefono,
-            int foto, String matricula, String generacion, 
-            Carrera carrera, String creditos, Tesis tesis,
-            Horario horario, boolean cartaCompromiso,
-            boolean cartaExp, String nombreEntidad) {
-        super(nombre,apellidoPaterno,apellidoMaterno,correoElectronico,telefono);
-        this.foto = foto;
-        this.matricula = matricula;
-        this.generacion = generacion;
-        this.carrera = carrera;
-        this.creditos = creditos;
-        this.tesis = tesis;
-        this.horario = horario;
-        this.cartaCompromiso = cartaCompromiso;
-        this.cartaExp = cartaExp;
-        this.nombreEntidad = nombreEntidad;
-    }*/
+
     public Candidato(){
         super();
         this.foto = 0;
@@ -42,7 +25,7 @@ public class Candidato extends Persona{
         this.trabajo= null;
     }
     
-    public void    setMatricula(String matricula) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
     public boolean isCartaCompromiso() {

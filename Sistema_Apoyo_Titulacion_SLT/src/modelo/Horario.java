@@ -1,41 +1,27 @@
 package modelo;
 import java.util.Date;
-public class mHorario {
+public class Horario {
     private String dia;
-    private String horaInicio;
-    private String horaFin;
-
-    public mHorario(String dia, String horaInicio, String horaFin) {
-        this.dia = dia;
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
-    }
-
+    private Date horaInicio;
+    private Date horaFin;
     public String getDia() {
         return dia;
     }
-
-    public String getHoraInicio() {
+    public Date getHoraInicio() {
         return horaInicio;
     }
-
-    public String getHoraFin() {
+    public Date getHoraFin() {
         return horaFin;
     }
-
     public void setDia(String dia) {
         this.dia = dia;
     }
-
-    public void setHoraInicio(String horaInicio) {
+    public void setHoraInicio(Date horaInicio) {
         this.horaInicio = horaInicio;
     }
-
-    public void setHoraFin(String horaFin) {
+    public void setHoraFin(Date horaFin) {
         this.horaFin = horaFin;
     }
-    
-    
     @Override
     public String toString() {
         return "Horario{" + "dia=" + dia + ", horaInicio=" + horaInicio + ", horaFin=" + horaFin + '}';

@@ -5,8 +5,6 @@
  */
 package vista;
 
-import java.awt.BorderLayout;
-
 /**
  *
  * @author Jhon Nash
@@ -25,7 +23,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         pc = new JPanelCreateCandidato();
         pa = new JPanelCreateAsesor();
         pf = new JPanelFuncionAdministrador();
-        jpc = new  JPanelLoginCandidato();
+        jpc = new JPanelLoginCandidato();
     }
 
     /**
@@ -164,6 +162,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private void jbttnAcademicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbttnAcademicoActionPerformed
         pa.setVisible(true);
         pa.setSize(400,438);
+        pa.setBounds(150, 80,400,580);
+        pa.revalidate();
+        pa.repaint();
+        this.add(pa);
       /*
         jPanelForm.removeAll();
         jPanelForm.add(pa,BorderLayout.CENTER);
